@@ -1,0 +1,10 @@
+.firebase/
+firebase-debug.log
+.DS_Store
+
+# Local tools and secrets
+node_modules/
+.wrangler/
+.env
+.env.*
+!.env.example
