@@ -52,23 +52,20 @@ code { font-family: var(--mono); font-size: .88em; background: var(--bg-alt); pa
   background: var(--accent); color: #fff; font-size: 13px; letter-spacing: .02em;
 }
 :root[data-theme="dark"] .brand-mark { color: #062b27; }
-nav { margin-left: auto; }
+nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
 .nav-links { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; align-items: center; }
-.nav-links a { color: var(--muted); font-size: 14.5px; font-weight: 500; padding: 8px 12px; border-radius: 8px; }
-.nav-links a:hover { color: var(--text); background: var(--bg-alt); text-decoration: none; }
-.nav-links .nav-cta { color: var(--accent-ink); border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); }
-.theme-toggle {
+.nav-links a, .nav-cta { color: var(--muted); font-size: 14.5px; font-weight: 500; padding: 8px 12px; border-radius: 8px; }
+.nav-links a:hover, .nav-cta:hover { color: var(--text); background: var(--bg-alt); text-decoration: none; }
+.nav-cta { color: var(--accent-ink); border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); }
+.theme-toggle, .menu-toggle {
   width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface);
   color: var(--text); display: grid; place-items: center; cursor: pointer; flex: none;
 }
-.theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.theme-toggle svg, .menu-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
 .theme-toggle .i-moon { display: none; }
 :root[data-theme="dark"] .theme-toggle .i-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .i-moon { display: block; }
-@media (max-width: 760px) {
-  .nav-links li:not(:last-child) { display: none; }
-  .brand-name { display: none; }
-}
+.menu-toggle { display: none; }
 
 /* ---------- Hero ---------- */
 .hero { padding: 72px 0 40px; position: relative; }
@@ -192,7 +189,7 @@ nav { margin-left: auto; }
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; }
   .card.featured { grid-column: auto; flex-direction: column; }
-  .card.featured .card-media { flex: none; aspect-ratio: 16 / 9; border-right: 0; border-bottom: 1px solid var(--line); }
+  .card.featured .card-media { flex: none; min-height: 0; aspect-ratio: 16 / 9; border-right: 0; border-bottom: 1px solid var(--line); }
 }
 @media (max-width: 460px) { .metrics { grid-template-columns: 1fr; } .card-body { padding: 20px; } }
 
@@ -261,6 +258,10 @@ nav { margin-left: auto; }
 .race dt { color: var(--muted); }
 .race dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
 @media (max-width: 800px) { .about { grid-template-columns: 1fr; gap: 28px; } }
+.about-cards { display: grid; gap: 20px; }
+.race.golf { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px 28px; }
+.golf-label { margin: 2px 0 0; font-size: 15px; color: var(--muted); }
+.golf .race-time { font-size: 40px; margin: 0; }
 
 /* ---------- Contact / footer ---------- */
 .contact { text-align: center; }
@@ -319,9 +320,9 @@ nav { margin-left: auto; }
 .nav { border-bottom: 0; }
 .nav-inner { height: 64px; }
 .brand { font-size: 20px; letter-spacing: -.6px; }
-.nav-links a { font-size: 12px; font-weight: 400; padding: 10px 14px; }
-.nav-links .nav-cta { background: var(--accent); color: white; border: 0; border-radius: 24px; padding: 7px 16px; }
-.theme-toggle { border: 0; background: transparent; border-radius: 50%; }
+.nav-links a, .nav-cta { font-size: 12px; font-weight: 400; padding: 10px 14px; }
+.nav-cta { background: var(--accent); color: white; border: 0; border-radius: 24px; padding: 7px 16px; }
+.theme-toggle, .menu-toggle { border: 0; background: transparent; border-radius: 50%; }
 .hero { padding: 100px 0 0; }
 .hero-grid { grid-template-columns: 1.2fr 1fr; gap: 70px; }
 .eyebrow { text-transform: none; letter-spacing: 0; color: var(--muted); font-size: 15px; font-weight: 600; margin-bottom: 20px; }
@@ -374,6 +375,7 @@ nav { margin-left: auto; }
 .doc-list a, .doc-list li.no-link { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 20px 0; }
 .doc-ico { background: var(--bg-alt); color: var(--muted); }
 .race { border: 0; box-shadow: none; padding: 36px; }
+.race.golf { padding: 24px 36px; }
 .race::after { display: none; }
 .race-time { font-weight: 600; }
 .contact { padding: 120px 0; }
@@ -393,7 +395,7 @@ nav { margin-left: auto; }
   .brand-name { display: inline; }
   .nav-inner { gap: 8px; }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .hero h1 { font-size: 58px; }
+  .hero h1 { font-size: clamp(44px, 15vw, 58px); }
   .hero-figure img { height: auto; aspect-ratio: 1.05; object-position: center; }
   .hero-figure figcaption { flex-direction: row; }
   .stats { margin-top: 44px; gap: 28px 16px; }
@@ -440,3 +442,33 @@ nav { margin-left: auto; }
  .resume-document li { break-inside: avoid; }
  .resume-document a { color: inherit; }
 }
+
+/* Phones: collapsible section menu, tighter vertical rhythm, larger tap targets. */
+.menu-toggle path { transition: transform .2s ease; transform-box: fill-box; transform-origin: center; }
+.nav.is-open .menu-toggle .m-top { transform: translateY(4px) rotate(45deg); }
+.nav.is-open .menu-toggle .m-bot { transform: translateY(-4px) rotate(-45deg); }
+@media (max-width: 760px) {
+  .menu-toggle { display: grid; margin-right: -8px; }
+  .nav-links { display: none; }
+  .nav.is-open { background: var(--bg); }
+  .nav.is-open .nav-links {
+    display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    position: absolute; top: 100%; left: 0; right: 0;
+    padding: 4px 24px 16px; background: var(--bg); border-bottom: 1px solid var(--line);
+  }
+  .nav.is-open .nav-links a {
+    display: block; padding: 14px 0; border-radius: 0; border-bottom: 1px solid var(--line);
+    font-size: 17px; color: var(--text);
+  }
+  .nav.is-open .nav-links li:last-child a { border-bottom: 0; }
+  .nav.is-open .nav-links a:hover { background: transparent; }
+}
+@media (max-width: 700px) {
+  .hero { padding-top: 40px; }
+  .section { padding: 72px 0; }
+  .contact { padding: 88px 0; }
+  .contact-row { font-size: 13px; gap: 4px 20px; }
+  .contact-row a, .contact-row span { padding: 6px 0; }
+  .resume-document { padding: 48px 24px 72px; }
+}
+@media (prefers-reduced-motion: reduce) { .menu-toggle path { transition: none; } }

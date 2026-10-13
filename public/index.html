@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d1d1f'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body id="top">
   <a class="skip" href="#main">Skip to content</a>
@@ -25,17 +25,20 @@
     <div class="wrap nav-inner">
       <a class="brand" href="#top"><span class="brand-name">Ben Mackert</span></a>
       <nav aria-label="Primary">
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-menu">
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#coursework">Coursework</a></li>
           <li><a href="#about">About</a></li>
-          <li><a class="nav-cta" href="resume.html">Resume</a></li>
         </ul>
+        <a class="nav-cta" href="resume.html">Resume</a>
       </nav>
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
         <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
         <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="m-top" d="M4 8h16"/><path class="m-bot" d="M4 16h16"/></svg>
       </button>
     </div>
   </header>
@@ -60,7 +63,7 @@
           </ul>
         </div>
         <figure class="hero-figure">
-          <img src="assets/img/ben-mackert.jpg" alt="Ben Mackert smiling in a blue shirt and black vest" width="3000" height="2400" fetchpriority="high">
+          <img src="assets/img/ben-mackert-1600.jpg" srcset="assets/img/ben-mackert-800.jpg 800w, assets/img/ben-mackert-1600.jpg 1600w, assets/img/ben-mackert.jpg 3000w" sizes="(max-width: 700px) 100vw, 45vw" alt="Ben Mackert smiling in a blue shirt and black vest" width="3000" height="2400" fetchpriority="high">
           <figcaption>Ben Mackert <span>CU Boulder · B.S. / M.S.</span></figcaption>
         </figure>
       </div>
@@ -462,16 +465,25 @@
           <p class="eyebrow mono">A little about me</p>
           <h2>Beyond the bench</h2>
           <p>I'm pursuing a B.S. and M.S. in Electrical &amp; Computer Engineering at CU Boulder, expected in May 2027 and May 2028, respectively. I like work where hardware and software meet: deciding what "working" means before power-up, then proving it with a scope and a test plan. My internships at CONMED and Medtronic put that into practice on medical devices, and I'm looking for full-time roles in embedded systems, hardware, and robotics.</p>
-          <p>Outside of engineering I run. I finished my first marathon, the 2025 Boulderthon, in <strong>3:13:07</strong>.</p>
+          <p>Outside of engineering I run and golf. I finished my first marathon, the 2025 Boulderthon, in <strong>3:12:14</strong>, and I play to a <strong>+1 handicap</strong>.</p>
         </div>
-        <div class="race">
-          <p class="mono race-head">Boulderthon · Sept 28, 2025</p>
-          <div class="race-time">3:13:07</div>
-          <dl>
-            <div><dt>Pace</dt><dd>7:22 /mi</dd></div>
-            <div><dt>Overall</dt><dd>63 / 2,058</dd></div>
-            <div><dt>Age group</dt><dd>11 / 304</dd></div>
-          </dl>
+        <div class="about-cards">
+          <div class="race">
+            <p class="mono race-head">Boulderthon · Sept 28, 2025</p>
+            <div class="race-time">3:12:14</div>
+            <dl>
+              <div><dt>Pace</dt><dd>7:20 /mi</dd></div>
+              <div><dt>Overall</dt><dd>63 / 2,058</dd></div>
+              <div><dt>Age group</dt><dd>11 / 304</dd></div>
+            </dl>
+          </div>
+          <div class="race golf">
+            <div>
+              <p class="mono race-head">Golf</p>
+              <p class="golf-label">Handicap</p>
+            </div>
+            <div class="race-time">+1</div>
+          </div>
         </div>
       </div>
     </section>
@@ -497,6 +509,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

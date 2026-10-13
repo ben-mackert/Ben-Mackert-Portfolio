@@ -15,6 +15,27 @@
     try { localStorage.setItem("theme", next); } catch (e) {}
   });
 
+  // Phone menu
+  var nav = document.querySelector(".nav");
+  var menuBtn = document.querySelector(".menu-toggle");
+  function setMenu(open) {
+    nav.classList.toggle("is-open", open);
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  menuBtn.addEventListener("click", function () {
+    setMenu(!nav.classList.contains("is-open"));
+  });
+  document.querySelectorAll(".nav-links a").forEach(function (a) {
+    a.addEventListener("click", function () { setMenu(false); });
+  });
+  document.addEventListener("click", function (e) {
+    if (!nav.contains(e.target)) setMenu(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && nav.classList.contains("is-open")) { setMenu(false); menuBtn.focus(); }
+  });
+
   // Project filters
   var chips = document.querySelectorAll(".chip");
   var cards = document.querySelectorAll(".card");
