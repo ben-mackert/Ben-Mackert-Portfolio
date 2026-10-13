@@ -417,3 +417,26 @@ nav { margin-left: auto; }
 @media (max-width: 700px) {
   .education-stats { grid-template-columns: 1fr; }
 }
+
+/* Browser-readable résumé, with a clean print layout. */
+.resume-document { max-width: 860px; margin: 0 auto; padding: 72px 28px 96px; }
+.resume-heading { margin-bottom: 56px; }
+.resume-heading h1 { font-size: clamp(40px, 7vw, 60px); font-weight: 600; margin-bottom: 16px; }
+.resume-heading > p { color: var(--muted); }
+.resume-contact { font-size: 15px; line-height: 1.8; }
+.resume-document section { border-top: 1px solid var(--line); padding-top: 28px; margin-top: 36px; }
+.resume-document h2 { font-size: 26px; font-weight: 600; margin-bottom: 22px; }
+.resume-document section p { margin: 20px 0 12px; }
+.resume-document ul { padding-left: 22px; margin: 12px 0 28px; }
+.resume-document li { margin-bottom: 8px; }
+.resume-page nav { font-size: 14px; }
+@media print {
+ .resume-page .nav, .resume-page .footer, .resume-page .btn, .resume-page .skip { display: none; }
+ .resume-document { padding: 0; max-width: none; font-size: 10pt; line-height: 1.4; }
+ .resume-heading { margin-bottom: 20px; }
+ .resume-heading h1 { font-size: 26pt; }
+ .resume-document section { margin-top: 20px; padding-top: 14px; }
+ .resume-document h2 { font-size: 15pt; break-after: avoid; }
+ .resume-document li { break-inside: avoid; }
+ .resume-document a { color: inherit; }
+}
