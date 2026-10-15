@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d1d1f'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body id="top">
   <a class="skip" href="#main">Skip to content</a>
@@ -26,6 +26,7 @@
       <a class="brand" href="#top"><span class="brand-name">Ben Mackert</span></a>
       <nav aria-label="Primary">
         <ul class="nav-links" id="nav-menu">
+          <li><a href="#skopos">Skopos</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#coursework">Coursework</a></li>
@@ -81,6 +82,38 @@
       </div>
     </section>
 
+    <!-- SKOPOS -->
+    <section class="section alt skopos-section" id="skopos" aria-labelledby="skopos-title">
+      <div class="wrap">
+        <div class="skopos-intro">
+          <div>
+            <p class="eyebrow">Current work · San Francisco, CA</p>
+            <h2 id="skopos-title">Building Skopos.</h2>
+            <p class="skopos-role">Chief Technology Officer</p>
+          </div>
+          <p class="skopos-summary">We’re developing a way to understand an indoor space before entering it, using robotic sensing and a map in the wearer’s field of view.</p>
+        </div>
+        <div class="skopos-feature">
+          <figure>
+            <img src="assets/img/skopos.jpg" alt="Early concept illustration of a Skopos survey drone" width="1200" height="900" loading="lazy">
+            <figcaption>Early concept illustration. Product in development.</figcaption>
+          </figure>
+          <div class="skopos-story">
+            <h3>My role</h3>
+            <p>I lead the technical development across sensing, embedded software, mapping, and the wearable display. My work spans deciding how the pieces fit together, building prototypes, and testing their behavior.</p>
+            <h3>Where the work stands</h3>
+            <p>The project is in development, with early sensor hardware tested on the bench and mapping and flight behavior explored in simulation. An integrated flight demonstration is still ahead.</p>
+            <a class="link" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div class="skopos-focus" aria-label="Engineering responsibilities">
+          <div><h3>System design</h3><p>Defining how sensing, processing, and the display work together, and turning the product idea into testable engineering tasks.</p></div>
+          <div><h3>Hardware &amp; firmware</h3><p>Bringing up sensors, developing embedded software, and checking how prototypes respond on the bench.</p></div>
+          <div><h3>Testing &amp; integration</h3><p>Using simulation and hardware tests to understand limitations before connecting more of the system.</p></div>
+        </div>
+      </div>
+    </section>
+
     <!-- EXPERIENCE -->
     <section class="section" id="experience">
       <div class="wrap">
@@ -93,11 +126,11 @@
             <div class="job-meta mono"><span>Present</span><span>San Francisco, CA</span></div>
             <div class="job-body">
               <h3>Chief Technology Officer (CTO) <span class="at">· Skopos</span></h3>
-              <p class="job-sum">Developing an interior-survey system that connects drone sensing, a wearable computer, and a map displayed on smart glasses.</p>
+              <p class="job-sum">Leading technical development for an interior-survey and wearable mapping system.</p>
               <ul>
                 <li>Lead technical development across embedded sensing, mapping software, and the heads-up display.</li>
-                <li>Develop a system with separate depth sensing for obstacle avoidance and scanning LiDAR for interior surveys, with map processing on a wearable computer.</li>
-                <li>Validate mapping, obstacle avoidance, and autonomous survey behavior in simulation. The obstacle sensor runs on bench hardware; the aircraft remains in development.</li>
+                <li>Define system interfaces and develop prototypes across hardware and software.</li>
+                <li>Evaluate early prototypes through bench testing and simulation; the product remains in development.</li>
               </ul>
               <ul class="tags"><li>Embedded systems</li><li>LiDAR</li><li>Mapping</li><li>Robotics</li><li>Wearable displays</li></ul>
             </div>
@@ -364,17 +397,6 @@
             </div>
           </article>
 
-          <!-- Skopos -->
-          <article class="card featured" data-cat="embedded software">
-            <div class="card-media dark"><img src="assets/img/skopos.jpg" alt="3D concept render of a small quadcopter carrying a 360-degree lidar on a mast" loading="lazy" width="1200" height="900"></div>
-            <div class="card-body">
-              <p class="course mono">Skopos · CTO · 2026 · in progress</p>
-              <h3>Drone LiDAR to heads-up display</h3>
-              <p>A prototype system with three parts. A small drone scans an interior, a worn host turns the scans into a map, and the map shows up on smart glasses. The obstacle sensor (VL53L5CX on an ESP32) runs on bench hardware and speaks MAVLink 2. Flight, the 360° lidar and scan-matching SLAM are so far only proven in simulation, including ArduCopter SITL.</p>
-              <ul class="tags"><li>ESP32 / C++</li><li>Python</li><li>MAVLink</li><li>ArduPilot SITL</li><li>ICP SLAM</li><li>BLE</li></ul>
-              <p class="note">Render is a concept model. Nothing has flown yet.</p>
-            </div>
-          </article>
         </div>
       </div>
     </section>

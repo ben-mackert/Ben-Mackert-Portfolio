@@ -472,3 +472,43 @@ nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
   .resume-document { padding: 48px 24px 72px; }
 }
 @media (prefers-reduced-motion: reduce) { .menu-toggle path { transition: none; } }
+
+/* Featured Skopos overview. */
+.skopos-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 48px; }
+.skopos-intro h2 { font-size: clamp(38px, 5vw, 64px); font-weight: 600; letter-spacing: -.045em; }
+.skopos-role { font-size: 20px; margin: 18px 0 0; color: var(--muted); }
+.skopos-summary { font-size: 22px; line-height: 1.5; color: var(--muted); margin: 0; }
+.skopos-feature { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.skopos-feature figure { margin: 0; min-width: 0; }
+.skopos-feature img { width: 100%; border-radius: 24px; }
+.skopos-feature figcaption { margin-top: 12px; font-size: 12px; color: var(--muted); }
+.skopos-story h3, .skopos-focus h3 { font-size: 22px; font-weight: 600; margin-bottom: 14px; }
+.skopos-story p, .skopos-focus p { color: var(--muted); }
+.skopos-story h3:not(:first-child) { margin-top: 28px; }
+.skopos-focus { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: 64px; }
+.skopos-focus > div { border-top: 1px solid var(--line); padding-top: 24px; }
+.skopos-focus p { margin: 0; }
+/* Keep text and controls usable on narrow phones. */
+.hero-text, .job-body, .card-body, .cols > div { min-width: 0; }
+.resume-contact, .resume-document li { overflow-wrap: anywhere; }
+@media (max-width: 900px) {
+  .skopos-intro { gap: 32px; }
+  .skopos-feature { gap: 32px; }
+  .skopos-summary { font-size: 19px; }
+}
+@media (max-width: 760px) {
+  .skopos-intro, .skopos-feature, .skopos-focus { grid-template-columns: 1fr; gap: 28px; }
+  .skopos-intro { margin-bottom: 32px; }
+  .skopos-focus { margin-top: 40px; }
+  .theme-toggle, .menu-toggle { width: 44px; height: 44px; }
+  .chip { min-height: 44px; }
+  .links a, .skopos-story .link { min-height: 44px; align-items: center; }
+  .job-meta { flex-wrap: wrap; }
+}
+@media (max-width: 380px) {
+  .nav-inner { gap: 4px; }
+  .brand { font-size: 18px; }
+  .nav-cta { padding: 8px 12px; }
+  .hero-actions { gap: 10px 18px; }
+  .hero-figure figcaption { flex-wrap: wrap; gap: 4px 12px; }
+}
