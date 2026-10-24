@@ -476,6 +476,8 @@ nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
 /* Featured Skopos overview. */
 .skopos-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 48px; }
 .skopos-intro h2 { font-size: clamp(38px, 5vw, 64px); font-weight: 600; letter-spacing: -.045em; }
+/* Skopos wordmark is set in Impact; Anton is the closest web font for devices without it. */
+.skopos-wordmark { font-family: Impact, Anton, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-weight: 400; letter-spacing: .01em; }
 .skopos-role { font-size: 20px; margin: 18px 0 0; color: var(--muted); }
 .skopos-summary { font-size: 22px; line-height: 1.5; color: var(--muted); margin: 0; }
 .skopos-feature { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
