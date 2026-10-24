@@ -192,6 +192,24 @@
 
         <div class="grid">
 
+          <!-- Board 3 -->
+          <article class="card featured" data-cat="pcb">
+            <div class="card-media fit-dark"><img src="assets/img/board3_top.jpg" alt="Top side of the Board 3 Golden Arduino PCB rendered from its Gerbers, with the ATmega328P, CH340G, USB Mini-B jack and Uno-style header rows" loading="lazy" width="1600" height="1240"></div>
+            <div class="card-body">
+              <p class="course mono">ECEN 3730 · PCB Design · Fall 2026</p>
+              <h3>Golden Arduino: an Arduino Uno designed for low noise</h3>
+              <p>My own Uno-compatible board: an ATmega328P with a 16&nbsp;MHz crystal, a CH340G USB-to-UART bridge with its own 12&nbsp;MHz crystal, USB Mini-B behind an SRV05-4 TVS array, and a 3.3&nbsp;V LDO for the header. The shield headers sit in the standard Uno positions, including the 160&nbsp;mil offset, so any shield plugs in.</p>
+              <p>The goal is lower switching noise than a commercial Uno on the same two-layer stack-up. The bottom layer is a ground plane broken only by short cross-unders, decoupling sits at each supply pin, and AVCC gets a 10&nbsp;µH ferrite filter. For bring-up, jumpers isolate the CH340G and the 328 from 5&nbsp;V, a 3-pin jumper selects USB or barrel-jack power so both can never be connected, and extra header rows beside the I/O give scope probes a short ground return.</p>
+              <ul class="metrics">
+                <li><b>3.9 × 2.9 in</b>two layers, all 1206 passives</li>
+                <li><b>4</b>10× probe test points</li>
+                <li><b>20–50%</b>target noise vs. commercial Uno</li>
+              </ul>
+              <ul class="tags"><li>Altium</li><li>ATmega328P</li><li>USB</li><li>Signal integrity</li><li>DFM</li></ul>
+              <p class="note">Gerbers approved by JLCPCB on Oct 20, 2026. Next: assembly, bootloading, then noise and near-field emission measurements against a commercial Uno.</p>
+            </div>
+          </article>
+
           <!-- Board 2 -->
           <article class="card featured" data-cat="pcb">
             <div class="card-media fit-dark"><img src="assets/img/board2_layout.jpg" alt="Altium layout of Board 2 with a cutout in the ground pour under the bad inverter" loading="lazy" width="1332" height="952"></div>
