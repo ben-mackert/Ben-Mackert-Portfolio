@@ -8,11 +8,13 @@ Portfolio/
 ├── .firebaserc          Firebase project ID: edit this
 └── public/
     ├── index.html       The site
-    ├── styles.css
-    ├── script.js        Theme toggle, project filters, scroll reveal
+    ├── resume.html      The resume as a web page
+    ├── styles.css       Light theme, one blue accent, Inter / Inter Tight from Google Fonts
+    ├── script.js        Menu, videos, simulator picker, project filters, scroll fade
     ├── 404.html
     └── assets/
-        ├── img/         Board photos, layouts, diagrams (resized)
+        ├── img/         Headshot, board photos, diagrams
+        ├── video/       The Skopos drone render used on its project card
         └── docs/        Resume + report PDFs linked from the site
 ```
 
@@ -86,7 +88,8 @@ The repository is `git@github.com:ben-mackert/Ben-Mackert-Portfolio.git`.
 | Capstone (SPICE) | `Fall 2026/ECEN 4610/Senior-Capstone-F2` |
 | Linear Systems projects | `Spring 2026/ECEN 3300/*/` |
 | Writing sample | `Spring 2026/WRTG 3030/…Final Professional Researched Paper….docx` → PDF |
-| Skopos / Slice | `Skopos/lidar-drone`, `Slice/` |
+| Skopos | Numbers from `Skopos/lidar-drone-main` (`POSE_SCOPE.md`, `ROADMAP.md`, `CLAUDE.md`) and `sitl/README.md` on the `sitl-extnav` branch; clips from `Work/Skopos/skopos-site/page/static` |
+| Slice | `Slice/` |
 | Marathon | `Fall 2025/Ben_Mackert_Boulderthon_Results.jpg` |
 
-To update the resume, recompile the LaTeX and copy the PDF over `public/assets/docs/Ben_Mackert_Resume.pdf`.
+To update the resume, recompile the LaTeX, copy the PDF over `public/assets/docs/Ben_Mackert_Resume.pdf`, and make the same edits in `public/resume.html`. The current copy is `Resume/SKOPOS Resume/Ben_Mackert_Resume_2026.pdf`.

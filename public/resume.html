@@ -1,29 +1,128 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Résumé | Ben Mackert</title>
-<meta name="description" content="Read Ben Mackert’s engineering résumé online: education, skills, experience, and projects.">
-<meta property="og:title" content="Résumé | Ben Mackert">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://benmackert.com/assets/img/ben-mackert.jpg">
-<meta property="og:image:alt" content="Ben Mackert’s headshot">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://benmackert.com/assets/img/ben-mackert.jpg">
-<meta name="twitter:image:alt" content="Ben Mackert’s headshot">
-<link rel="stylesheet" href="styles.css?v=8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume | Ben Mackert</title>
+  <meta name="description" content="Ben Mackert’s resume: education, experience, projects and skills.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Resume | Ben Mackert">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://benmackert.com/assets/img/ben-mackert.jpg">
+  <meta property="og:image:alt" content="Ben Mackert’s headshot">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://benmackert.com/assets/img/ben-mackert.jpg">
+  <meta name="twitter:image:alt" content="Ben Mackert’s headshot">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@600;700&amp;display=swap">
+  <link rel="stylesheet" href="styles.css?v=12">
 </head>
-<body class="resume-page">
-<a class="skip" href="#resume">Skip to résumé</a>
-<header class="nav"><div class="wrap nav-inner"><a class="brand" href="./">Ben Mackert</a><nav aria-label="Résumé navigation"><a href="./">Back to portfolio</a></nav></div></header>
-<main id="resume" class="resume-document">
-<div class="resume-heading"><p class="eyebrow">Résumé</p><h1>Ben Mackert</h1>
-<p>Electrical &amp; Computer Engineering</p>
-<p class="resume-contact"><a href="tel:+13035514217">(303) 551-4217</a> · <a href="mailto:benmackert@gmail.com">benmackert@gmail.com</a> · San Francisco, CA<br><a href="https://www.linkedin.com/in/ben-mackert/">LinkedIn</a></p>
-<a class="btn btn-primary" href="assets/docs/Ben_Mackert_Resume.pdf" download>Download PDF</a>
-</div>
-<section><h2>Education</h2><p><strong>University of Colorado Boulder</strong>, Boulder, CO<br>
-<em>B.S. Electrical and Computer Engineering</em>  ·  Expected May 2027<br>
-GPA 3.9, Dean’s List</p></section><section><h2>Technical Courses</h2><ul><li>Circuits I (A), Circuits II (A), Electronics Design Lab (A–), Embedded Software Engineering (A)</li><li>Linear Systems (A), Computer Organization (A), RTOS (A–), Probability Theory (A)</li><li>Data Structures (A), Prog. Digital Systems (A–), Physics II (A)</li><li>Calculus I (A, AP 5), Calculus II (A–), Calculus III (A–)</li></ul></section><section><h2>Skills</h2><p><strong>Languages:</strong> C, C++, Python, RISC-V Assembly, Verilog, LaTeX, Java, HTML, CSS</p><p><strong>Software:</strong> OpenCV, MediaPipe, Altium Designer, SolidWorks, LTspice, STM32CubeIDE, GitHub, Bitbucket, Excel</p><p><strong>Core Engineering Skills:</strong> Embedded Systems, Computer Vision, Machine Learning, Embedded Firmware, Circuit Design, Digital Logic, Sensor Interfaces, Data Logging</p><p><strong>Hardware &amp; Testing:</strong> PCB Design, Hardware Bring-Up, Sensor Integration, SMD, THT, Soldering, Oscilloscopes, Function Generators, DMMs, Power Supplies</p></section><section><h2>Experience</h2><p><strong>Electrical &amp; Software Engineering Intern – Medtronic</strong>  · <strong>Boston, MA</strong>  |  Jun 2026 – Aug 2026</p><ul><li>Developed a surgeon head-pose tracking pipeline using Intel RealSense, OpenCV, MediaPipe Face Mesh, and solvePnP to analyze RGB/NIR camera tracking against a motion-capture reference system.</li><li>Synchronized motion-capture head-pose data with camera frame timestamps over DDS for post-session and real-time comparison of stereo NIR, RGB, and reference tracking solutions.</li><li>Built a Python GUI to manage capture metadata, log synchronized tracking data, and streamline computer vision analysis across test sessions.</li><li>Supported STM32 board bring-up for a surgical robotics prototype, including debugging hardware issues, and developing I2C firmware for sensor data acquisition.</li></ul><p><strong>Electrical Engineering Intern – CONMED Corporation</strong>  · <strong>Denver, CO</strong>  |  May 2025 – Aug 2025</p><ul><li>Designed and built an auto-calibration system using an Arduino Nano Every and digital potentiometer to map ESU voltages to resistance with a 4<sup>th</sup>-degree polynomial.</li><li>Designed a custom PCB in Altium for the calibration hardware, integrating a resistor ladder with MCU control.</li><li>Created a Python Tkinter GUI and serial/Matplotlib backend to display real-time calibration plots.</li><li>Reduced calibration error by 92.5%, enabling full transformer compatibility and cutting manufacturing scrap.</li><li>Simulated 3- and 4-point calibration in Python; achieved LMS errors as low as 1.76&nbsp;Ω² across transformer models.</li><li>Delivered three Python modeling tools and documented findings in an internal engineering report.</li></ul></section><section><h2>Projects</h2><p><strong>STM32 Microcontroller PCB – Bluetooth &amp; USB-C</strong></p><ul><li>Created a 4-layer STM32 PCB in Altium Designer for Bluetooth and USB-C integration.</li><li>Achieved 480 Mbps USB-C data and BLE telemetry for wireless diagnostics between devices in testing scenarios.</li><li>Optimized high-speed signal routing against EMI by collaborating with 3 engineers on layout constraints and PCB stack-up.</li><li>Engineered oscilloscope-based test methods, boosting debugging efficiency by 20% and accelerating bring-up.</li></ul><p><strong>Restaurant Review Backend App</strong></p><ul><li>Built a modular data store in C++ to manage structured reviews, enabling filtered queries in under 100 ms.</li><li>Optimized search performance using hash maps and binary search trees; improved throughput and load handling by 40%.</li><li>Managed feature branches; reviewed, tested, and merged 10 pull requests with clean commits.</li><li>Refined user input and query handling across 4 iterative versions, cutting user-reported bugs by over 30%.</li></ul></section></main>
-<footer class="footer"><div class="wrap"><a href="./">Back to portfolio</a></div></footer>
-</body></html>
+<body>
+  <a class="skip" href="#resume">Skip to resume</a>
+
+  <header class="mast" id="mast">
+    <a class="wordmark" href="./" aria-label="Ben Mackert, home">Ben Mackert</a>
+    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span>Menu</span></button>
+    <nav aria-label="Site" id="site-nav"><a href="./#experience">Experience</a><a href="./#projects">Projects</a><a href="./#contact">Contact</a><a class="btn btn--primary" href="assets/docs/Ben_Mackert_Resume.pdf" download>Download PDF</a></nav>
+  </header>
+
+  <main id="resume">
+    <section class="page-hero">
+      <div class="wrap">
+        <h1>Resume</h1>
+        <p><a href="tel:+13035514217">(303) 551-4217</a> · <a href="mailto:benmackert@gmail.com">benmackert@gmail.com</a> · <a href="https://www.linkedin.com/in/ben-mackert/">LinkedIn</a> · San Francisco, CA</p>
+        <div class="btns"><a class="btn btn--primary" href="assets/docs/Ben_Mackert_Resume.pdf" download>Download PDF</a><a class="btn btn--line" href="./">Back to the portfolio</a></div>
+      </div>
+    </section>
+
+    <div class="wrap cv">
+      <section>
+        <h2>Education</h2>
+        <div>
+          <h3>University of Colorado Boulder</h3>
+          <p>M.S. Electrical and Computer Engineering, expected May 2028</p>
+          <p>B.S. Electrical and Computer Engineering, expected May 2027</p>
+          <p>GPA 3.9, Dean’s List</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <div>
+          <div class="entry">
+            <h3>Co-Founder &amp; CTO, Skopos Industries Inc.</h3>
+            <p class="when">Jun 2026 – present · San Francisco, CA</p>
+            <ul>
+              <li>Co-founded a defense startup building a self-flying drone that maps GPS-denied buildings onto AR glasses; lead all software and serve as SBIR principal investigator.</li>
+              <li>Architected ESP32 firmware, a BLE protocol, a Python mapping pipeline and AR display, backed by 1,600+ automated tests.</li>
+              <li>Built a lidar scan-matching pose estimator reaching 3.1&nbsp;cm average wall error in simulation, and added an observability check that rejects confident-but-wrong fixes that drifted 13.3&nbsp;m along featureless walls.</li>
+              <li>Flew scan-matched pose on ArduCopter SITL over MAVLink with no GPS (hover within 9&nbsp;cm); fault injection exposed flyaways the autopilot’s health checks missed, now gates for first flight.</li>
+              <li>Designed for safe failure: stale sensor data shows as unknown, never clear, and the system never arms the drone itself.</li>
+            </ul>
+          </div>
+          <div class="entry">
+            <h3>Electrical &amp; Software Engineering Intern, Medtronic</h3>
+            <p class="when">Jun 2026 – Aug 2026 · Boston, MA</p>
+            <ul>
+              <li>Developed a surgeon head-pose tracking pipeline using Intel RealSense, OpenCV, MediaPipe Face Mesh, and solvePnP to analyze RGB/NIR camera tracking against a motion-capture reference system.</li>
+              <li>Synchronized motion-capture head-pose data with camera frame timestamps over DDS for post-session and real-time comparison of stereo NIR, RGB, and reference tracking solutions.</li>
+              <li>Built a Python GUI to manage capture metadata, log synchronized tracking data, and streamline computer vision analysis across test sessions.</li>
+              <li>Supported STM32 board bring-up for a surgical robotics prototype, including debugging hardware issues, and developing I2C firmware for sensor data acquisition.</li>
+            </ul>
+          </div>
+          <div class="entry">
+            <h3>Electrical Engineering Intern, CONMED Corporation</h3>
+            <p class="when">May 2025 – Aug 2025 · Denver, CO</p>
+            <ul>
+              <li>Designed and built an auto-calibration system using an Arduino Nano Every and digital potentiometer to map ESU voltages to resistance with a 4<sup>th</sup>-degree polynomial.</li>
+              <li>Designed a custom PCB in Altium for the calibration hardware, integrating a resistor ladder with MCU control.</li>
+              <li>Created a Python Tkinter GUI and serial/Matplotlib backend to display real-time calibration plots.</li>
+              <li>Reduced calibration error by 92.5%, enabling full transformer compatibility and cutting manufacturing scrap.</li>
+              <li>Simulated 3- and 4-point calibration in Python; achieved LMS errors as low as 1.76&nbsp;Ω² across transformer models.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <div>
+          <h3>STM32 Microcontroller PCB – Bluetooth &amp; USB-C</h3>
+          <ul>
+            <li>Created a 4-layer STM32 PCB in Altium Designer for Bluetooth and USB-C integration.</li>
+            <li>Achieved 480 Mbps USB-C data and BLE telemetry for wireless diagnostics between devices in testing scenarios.</li>
+            <li>Optimized high-speed signal routing against EMI by collaborating with 3 engineers on layout constraints and PCB stack-up.</li>
+            <li>Engineered oscilloscope-based test methods, boosting debugging efficiency by 20% and accelerating bring-up.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <div>
+          <p><strong>Languages:</strong> C, C++, Python, RISC-V Assembly, Verilog, LaTeX, Java, HTML, CSS</p>
+          <p><strong>Software:</strong> ArduPilot SITL, MAVLink, pytest, OpenCV, MediaPipe, Altium Designer, SolidWorks, LTspice, STM32CubeIDE, GitHub, Bitbucket, Excel</p>
+          <p><strong>Core engineering:</strong> Embedded Systems, Computer Vision, Machine Learning, SLAM &amp; State Estimation, Embedded Firmware, Circuit Design, Digital Logic, Sensor Interfaces, Data Logging</p>
+          <p><strong>Hardware &amp; testing:</strong> PCB Design, Hardware Bring-Up, Sensor Integration, SMD, THT, Soldering, Oscilloscopes, Function Generators, DMMs, Power Supplies</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Courses</h2>
+        <div>
+          <p>Probability Theory (A), Linear Systems (A), Data Structures (A), Computer Organization (A), Embedded Software Eng. (A), RTOS (A–), Circuits I &amp; II (A), Electronics Design Lab (A–), Prog. Digital Systems (A–), Calculus I–III</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-legal" style="border-top:0"><div class="wrap"><span>© 2026 Ben Mackert</span><a href="./">Back to the portfolio</a></div></div>
+  </footer>
+
+  <script src="script.js?v=5"></script>
+</body>
+</html>

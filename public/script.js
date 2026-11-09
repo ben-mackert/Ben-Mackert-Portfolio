@@ -1,71 +1,74 @@
 (function () {
-  var root = document.documentElement;
+  'use strict';
+  document.documentElement.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function (s) { return document.querySelector(s); };
+  var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
 
-  // Theme toggle (remembered per browser; the page defaults to light)
-  try {
-    var saved = localStorage.getItem("theme");
-    if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
-  } catch (e) {}
-  if (!root.hasAttribute("data-theme")) {
-    root.setAttribute("data-theme", window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  /* ---------- phone menu ---------- */
+  var mast = $('#mast'), menuBtn = $('#menu-btn');
+  if (mast && menuBtn) {
+    var setMenu = function (open) {
+      mast.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+    };
+    menuBtn.addEventListener('click', function () { setMenu(!mast.classList.contains('open')); });
+    mast.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+    document.addEventListener('click', function (e) { if (!mast.contains(e.target)) setMenu(false); });
   }
-  document.querySelector(".theme-toggle").addEventListener("click", function () {
-    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("theme", next); } catch (e) {}
-  });
 
-  // Phone menu
-  var nav = document.querySelector(".nav");
-  var menuBtn = document.querySelector(".menu-toggle");
-  function setMenu(open) {
-    nav.classList.toggle("is-open", open);
-    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
-    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  /* ---------- videos play while on screen ---------- */
+  if ('IntersectionObserver' in window) {
+    var vio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && !reduce) { var p = e.target.play(); if (p && p.catch) p.catch(function () {}); }
+        else e.target.pause();
+      });
+    }, { rootMargin: '80px' });
+    $$('video[data-auto]').forEach(function (v) { vio.observe(v); });
   }
-  menuBtn.addEventListener("click", function () {
-    setMenu(!nav.classList.contains("is-open"));
-  });
-  document.querySelectorAll(".nav-links a").forEach(function (a) {
-    a.addEventListener("click", function () { setMenu(false); });
-  });
-  document.addEventListener("click", function (e) {
-    if (!nav.contains(e.target)) setMenu(false);
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && nav.classList.contains("is-open")) { setMenu(false); menuBtn.focus(); }
+  if (reduce) $$('video[data-auto]').forEach(function (v) { v.controls = true; });
+
+  /* ---------- simulator replays: pick one ---------- */
+  var sim = $('#sim-video'), cap = $('#sim-cap');
+  $$('#sim-pick button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      $$('#sim-pick button').forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+      sim.poster = b.getAttribute('data-poster');
+      sim.src = b.getAttribute('data-video');
+      sim.setAttribute('aria-label', 'Simulator replay: ' + b.getAttribute('data-cap'));
+      cap.textContent = b.getAttribute('data-cap');
+      sim.load();
+      if (!reduce) { var p = sim.play(); if (p && p.catch) p.catch(function () {}); }
+    });
   });
 
-  // Project filters
-  var chips = document.querySelectorAll(".chip");
-  var cards = document.querySelectorAll(".card");
+  /* ---------- project filters ---------- */
+  var chips = $$('.chip'), cards = $$('.card');
   chips.forEach(function (chip) {
-    chip.addEventListener("click", function () {
-      var f = chip.getAttribute("data-filter");
+    chip.addEventListener('click', function () {
+      var f = chip.getAttribute('data-filter');
       chips.forEach(function (c) {
-        var on = c === chip;
-        c.classList.toggle("is-active", on);
-        c.setAttribute("aria-pressed", on ? "true" : "false");
+        c.classList.toggle('is-active', c === chip);
+        c.setAttribute('aria-pressed', String(c === chip));
       });
       cards.forEach(function (card) {
-        var cats = card.getAttribute("data-cat").split(" ");
-        card.hidden = !(f === "all" || cats.indexOf(f) !== -1);
-        // featured cards collapse to a normal tile when filtered so the grid stays balanced
-        card.classList.toggle("is-filtered", f !== "all");
+        card.hidden = !(f === 'all' || card.getAttribute('data-cat') === f);
+        card.classList.toggle('is-filtered', f !== 'all');
+        card.classList.add('in');
       });
     });
   });
 
-  // Reveal on scroll
-  var targets = document.querySelectorAll(".job, .card, .doc-list li, .race, .stats");
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { rootMargin: "0px 0px -8% 0px" });
-    targets.forEach(function (t) { t.classList.add("reveal"); io.observe(t); });
+  /* ---------- fade up on scroll ---------- */
+  var rise = $$('.rise');
+  if ('IntersectionObserver' in window && !reduce) {
+    var rio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -6% 0px' });
+    rise.forEach(function (t) { rio.observe(t); });
+  } else {
+    rise.forEach(function (t) { t.classList.add('in'); });
   }
-
-  document.getElementById("year").textContent = new Date().getFullYear();
 })();
