@@ -80,6 +80,7 @@ The repository is `git@github.com:ben-mackert/Ben-Mackert-Portfolio.git`.
 | Site section | Source in ~/Documents |
 |---|---|
 | Experience, skills, courses | `Resume/Full-Time Resume/Ben_Mackert_Resume_2026.tex` |
+| Board 3 Golden Arduino | `School/Fall 2026/ECEN 3730/Board 3 Report/` (report PDF + board photo) |
 | Board 2 noise PCB | `WindBorneApplication/README.md` (+ images) |
 | Board 1 / Trace resistance reports | `Fall 2026/ECEN 3730/*/` (compiled PDFs) |
 | RTOS Labyrinth | `Spring 2026/ECEN 3753/final-project-benmackert/docs/finalReport.md` → PDF |
